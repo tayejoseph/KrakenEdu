@@ -15,7 +15,7 @@ export default createGlobalStyle`
       font-family: ${({ theme }) => theme.fontFamily};
       background: ${({ theme }) => theme.bgColor};    
       ${maxQuery('sm')} {
-        font-size: 95%;
+        font-size: 80%;
       }
     }
     html { 

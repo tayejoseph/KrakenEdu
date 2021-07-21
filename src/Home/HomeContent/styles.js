@@ -1,18 +1,25 @@
 import Styled from 'styled-components'
 import { lighten } from 'polished'
+import { minQuery, maxQuery } from '../../helpers'
 
 export default Styled.div`
     header {
         background: #373E68;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         padding: 0.8em 1.5em;
         border-radius: 10px;
         margin-bottom: 1.5em;
         color: #fff;
+        ${maxQuery('<lg')} {
+            margin-top: 1.5em;
+        }
+        ${minQuery('md')} {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;       
+        }
         div.col--1 {     
             display: flex;
+            max-width: 30rem;
             justify-content: space-between;
             align-items: center;
             .icon {
@@ -50,6 +57,11 @@ export default Styled.div`
             border-radius: 8px;
             font-size: 1rem;
             cursor: pointer;
+            ${maxQuery('<md')} {
+                margin-top: 1.5em;
+                font-size: 0.8rem;
+                justify-self: flex-end;
+            }
             &:hover, &:focus {
                 background: ${lighten(0.1, '#B61CEE')}
             }
